@@ -1,0 +1,7 @@
+{
+  "name": "Reflections & Journal with Gemini",
+  "description": "A private authenticated journal where you can write reflections, converse with Gemini, and receive AI-powered insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

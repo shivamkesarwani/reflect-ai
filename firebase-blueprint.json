@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "JournalEntry": {
+      "title": "JournalEntry",
+      "description": "User reflection journal entry with conversation and AI synthesis",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the journal entry"
+        },
+        "userId": {
+          "type": "string",
+          "description": "The UID of the authenticated user owner"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the journal reflection"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp when the entry was created"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp when the entry was last updated"
+        },
+        "messages": {
+          "type": "array",
+          "description": "Conversation messages between user and Gemini"
+        },
+        "summary": {
+          "type": "string",
+          "description": "AI synthesized summary of the reflection"
+        },
+        "keyThemes": {
+          "type": "array",
+          "description": "Key themes extracted from the reflection"
+        },
+        "actionableTakeaways": {
+          "type": "array",
+          "description": "Actionable takeaways and inquiries"
+        },
+        "sentiment": {
+          "type": "string",
+          "description": "Identified reflective sentiment or tone"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category theme tag"
+        }
+      },
+      "required": ["id", "userId", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/entries/{entryId}": {
+      "schema": "JournalEntry",
+      "description": "Collection of private journal entries isolated per user"
+    }
+  }
+}
